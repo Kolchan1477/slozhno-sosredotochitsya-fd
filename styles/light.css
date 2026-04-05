@@ -1,12 +1,36 @@
-/*
-  Специально для светлой темы при наличии класса.
-  Здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
+/* styles/light.css */
+/* Принудительная светлая тема через класс */
 :root.theme-light {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  --bg-color: #fff1f7;
+  --bg-image: url(../images/cover-image-light.png);
+  --text-color: #353430;
+  --title-color: #ffc2e6;
+  --accent-color: #ff8dcb;
+  --accent-transparent: rgba(255, 141, 203, 0.4);
+  --subtitle-color: #353430;
+  --title-shadow: 4px 4px 0 var(--accent-color);
+}
+
+/* В светлой теме REC должен быть скрыт */
+:root.theme-light .rec-decor {
+  display: none;
+}
+
+/* Автоматическая светлая тема через prefers-color-scheme */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-color: #fff1f7;
+    --bg-image: url(../images/cover-image-light.png);
+    --text-color: #353430;
+    --title-color: #ffc2e6;
+    --accent-color: #ff8dcb;
+    --accent-transparent: rgba(255, 141, 203, 0.4);
+    --subtitle-color: #353430;
+    --title-shadow: 4px 4px 0 var(--accent-color);
+  }
+  
+  /* Скрываем REC при автоматической светлой теме */
+  .rec-decor {
+    display: none;
+  }
 }

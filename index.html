@@ -1,40 +1,145 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Сложно сосредоточиться</title>
-    <script src="./scripts/script.js"></script>
-  </head>
-  <body class="page">
-    <header class="header decorated-zone">
-      <nav class="header__theme-menu">
-        <ul class="header__theme-menu-list">
-          <li class="header__theme-menu-item">
-            <button
-              class="header__theme-menu-button header__theme-menu-button_type_light"
-            >
-              День
-            </button>
-          </li>
-          <li class="header__theme-menu-item">
-            <button
-              class="header__theme-menu-button header__theme-menu-button_active header__theme-menu-button_type_auto"
-              disabled
-            >
-              Авто
-            </button>
-          </li>
-          <li class="header__theme-menu-item">
-            <button
-              class="header__theme-menu-button header__theme-menu-button_type_dark"
-            >
-              Неон
-            </button>
-          </li>
-        </ul>
-      </nav>
-    </header>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <!-- 1. Метатег для определения цветовой схемы (тёмная тема как основная) -->
+  <meta name="color-scheme" content="dark light">
+  
+  <!-- 2. Заголовок страницы -->
+  <title>Сложно сосредоточиться</title>
+  
+  <!-- 3. Фавиконки -->
+  <!-- Стандартный favicon для всех браузеров (32x32) -->
+  <link rel="icon" href="./images/favicon.ico" sizes="32x32">
+  <!-- Векторная иконка для современных браузеров -->
+  <link rel="icon" href="./images/favicon.svg" type="image/svg+xml">
+  <!-- Иконка для устройств Apple (iOS) 180x180 -->
+  <link rel="apple-touch-icon" href="./images/mobile-icon.png">
+  
+  <!-- 4. Скрипт управления темами (подключаем с defer, чтобы не блокировал загрузку страницы) -->
+  <script src="./scripts/script.js" defer></script>
+  
+  <!-- 5. Подключение CSS в правильном порядке (каскадность) -->
+  <!-- Глобальные переменные и сбросы (наиболее общие стили) -->
+  <link rel="stylesheet" href="./styles/globals.css">
+  <!-- Основные стили проекта (mobile-first, тема по умолчанию — тёмная) -->
+  <link rel="stylesheet" href="./styles/style.css">
+  <!-- Стили для принудительной тёмной темы (переопределения, если есть класс theme-dark) -->
+  <link rel="stylesheet" href="./styles/dark.css">
+  <!-- Стили для светлой темы (переопределения, идут последними, чтобы при наличии класса theme-light перебить тёмную) -->
+  <link rel="stylesheet" href="./styles/light.css">
+</head>
+<body class="page">
+  <header class="header decorated-zone">
+    <span class="rec-decor" aria-hidden="true">REC</span>
+    <nav class="header__theme-menu">
+      <ul class="header__theme-menu-list">
+        <li class="header__theme-menu-item">
+          <button class="header__theme-menu-button header__theme-menu-button_type_light">
+            День
+          </button>
+        </li>
+        <li class="header__theme-menu-item">
+          <button class="header__theme-menu-button header__theme-menu-button_active header__theme-menu-button_type_auto" disabled>
+            Авто
+          </button>
+        </li>
+        <li class="header__theme-menu-item">
+          <button class="header__theme-menu-button header__theme-menu-button_type_dark">
+            Неон
+          </button>
+        </li>
+      </ul>
+    </nav>
+    <h1 class="header__title">no focus</h1>
+    <div class="header__description">
+      <p class="title-decor">Что делать, когда не можешь делать ничего<br>Или почему нам так сложно сконцентрироваться, особенно когда очень надо</p>
+    </div>
+  </header>
+
+  <main class="content">
+    <!-- Секция: Почему сосредоточиться так сложно -->
+    <section class="section section--why">
+      <h2 class="section__title">Почему сосредоточиться так сложно</h2>
+      <div class="section__content">
+        <article class="card">
+          <h3 class="card__title title-decor">Многозадачность — миф</h3>
+          <p class="card__text">Особенно сложно сосредоточиться, когда задачи много и все они — важные. Где же легендарная многозадачность, когда она так нужна вам (и всем нанимающим менеджерам этого мира)? А дело в том, что её просто не существует. Исследователи выяснили, что мозг тяжело концентрироваться даже на двух делах одновременно. А когда в поле внимания попадает несколько важных задач, организм паникует и выделяет кортизол и адреналин — «гормоны стресса». Из-за этого мы работаем невнимательно: ошибаемся и быстро устаём.</p>
+        </article>
+        <article class="card">
+          <h3 class="card__title title-decor">Дофамин на страже отвлечений</h3>
+          <p class="card__text">С гормонами стресса всё понятно, но дальше — ещё интереснее. В нашей невозможности сосредоточиться замешана и полная противоположность стрессу — дофамин. Это вещество участвует в системе вознаграждения мозга. Причём тут он? Мы часто отвлекаемся от важной задачи на что-то более сиюминутно приятное. Мозг ищет лёгкий дофамин: проверить ленту, посмотреть видео. Мы решаем задачу только тогда, когда понимаем, что это важно для нас. Если же мы не находим ответа быстро, то начинаем думать, что задача слишком сложная — и переключаемся на нечто, сулящее быстрое вознаграждение.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Секция: Что снижает концентрацию? -->
+    <section class="section section--distractors">
+      <h2 class="section__title">Что снижает концентрацию?</h2>
+      <div class="section__grid">
+        <article class="card">
+          <h3 class="card__title title-decor">Концентрация</h3>
+          <p class="card__text">Как концентрация может снижаться из-за... концентрации? Любая стрессовая ситуация (и резко меняющаяся картина мира в целом) заставляет наш мозг постоянно «сканировать» окружающую среду на предмет опасности. Например, читать новости вместо работы. Но быть собранными всё время — невозможно. Концентрация — это ресурс, и она истощается, если не давать ей отдыхать.</p>
+        </article>
+        <article class="card">
+          <h3 class="card__title title-decor">Еда</h3>
+          <p class="card__text">«Быстрые углеводы» — сахар, белый хлеб, сладости — молниеносно доставляют в мозг энергию и помогают ему лучше работать. Но уходит эта энергия так же быстро, как и появляется. После резкого подъёма наступает спад, и сконцентрироваться становится ещё сложнее. Нужно выбирать сложные углеводы и не забывать о регулярном питании.</p>
+        </article>
+        <article class="card">
+          <h3 class="card__title title-decor">Гаджеты</h3>
+          <p class="card__text">Постоянные уведомления, доступ к соцсетям и мессенджерам фрагментируют наше внимание. Каждый раз, отвлекаясь на телефон, мы теряем нить мысли и потом тратим время на «врабатывание» заново. Это одна из главных причин снижения продуктивности в современном мире.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Секция: Как эффективнее управлять своей энергией (заголовки без фона) -->
+    <section class="section section--energy">
+      <h2 class="section__title">Как эффективнее управлять своей энергией?</h2>
+      <div class="section__content">
+        <article class="card">
+          <h3 class="card__title card__title--plain">Осознанность</h3>
+          <p class="card__text">Следите за своим состоянием. Если чувствуешь напряжение — сделай паузу, переключись на дыхательную практику или короткую прогулку. Если чувствуешь спокойствие — можно углубиться в задачу. Радость — отличный сигнал для креативной работы, но не забывайте про баланс.</p>
+        </article>
+        <article class="card">
+          <h3 class="card__title card__title--plain">Планирование и отдых</h3>
+          <p class="card__text">Чем больше энергии мы используем без восстановления, тем быстрее наступает выгорание. Важно контролировать свой темп, чередовать интеллектуальную активность с физической, а также высыпаться. Регулярные короткие перерывы (метод Pomodoro) помогают сохранять фокус дольше.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Блок с рекомендацией -->
+    <section class="section section--advice">
+      <h2 class="section__title">Как перестать злоупотреблять отвлечениями?</h2>
+      <div class="advice-grid">
+        <article class="card">
+          <h3 class="card__title title-decor">Создайте среду без лишних раздражителей</h3>
+          <p class="card__text">Уберите телефон из поля зрения, закройте лишние вкладки, используйте приложения-блокировщики. Так вы снижаете количество «крючков» для дофаминовых ловушек.</p>
+        </article>
+        <article class="card">
+          <h3 class="card__title title-decor">Начните с малого</h3>
+          <p class="card__text">Правило двух минут: если дело занимает меньше двух минут — сделайте его сразу. А для крупных задач разбивайте их на микрошаги, чтобы не испытывать стресс от масштаба.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Секция с галереей -->
+    <section class="gallery">
+      <h2 class="gallery__title title-decor">Наглядные примеры концентрации</h2>
+      <div class="gallery__grid">
+        <img class="gallery__image" src="./images/sunset.png" alt="Спокойный закат для релаксации" loading="lazy">
+        <img class="gallery__image" src="./images/ice-cream.png" alt="Мороженое — быстрый дофамин, но не только" loading="lazy">
+        <img class="gallery__image" src="./images/tape.png" alt="REC - запишите свою любимую музыку" loading="lazy">
+        <img class="gallery__image" src="./images/books.png" alt="Книги и глубокий фокус" loading="lazy">
+        <img class="gallery__image" src="./images/street.png" alt="Улица - прогуляйся по любимому городу" loading="lazy">
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer decorated-zone">
+    <h2 class="footer__title">focus</h2>
+  </footer>
+</body>
 </html>

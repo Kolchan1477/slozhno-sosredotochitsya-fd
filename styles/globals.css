@@ -1,5 +1,4 @@
-/* Глобальные стили для проекта, их можно дополнять и менять по желанию */
-
+/* styles/globals.css */
 *,
 *::before,
 *::after {
@@ -39,4 +38,123 @@ a {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+}
+
+/* Корневые переменные (тёмная тема по умолчанию) */
+:root {
+  /* Цвета */
+  --bg-color: #000028;
+  --bg-image: url(../images/cover-image-dark.png);
+  --text-color: #f1b2ce;
+  --title-color: #db00ff;
+  --accent-color: #ff0070;
+  --accent-transparent: rgba(255, 0, 112, 0.4);
+  --subtitle-color: #000028;
+  
+  /* Шрифты */
+  --font-family: 'IBM Plex mono', monospace;
+  --main-font-size: 18px;
+  --main-line-height: 1.3;
+  
+  /* Отступы */
+  --padding-mobile: 10px;
+  --padding-tablet: 20px;
+  --padding-desktop: 20px;
+  
+  /* Тени */
+  --title-shadow: 4px 4px 0 var(--accent-color);
+}
+
+/* Базовые стили для страницы */
+.page {
+  font-family: var(--font-family);
+  font-size: var(--main-font-size);
+  line-height: var(--main-line-height);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  background-image: var(--bg-image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* Декоративный элемент REC */
+.rec-decor {
+  position: absolute;
+  top: 20px;
+  right: 48px;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: var(--main-font-size);
+  line-height: 1.4;
+  letter-spacing: 0.1em;
+  pointer-events: none;
+}
+
+.rec-decor::after {
+  content: '';
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-left: 10px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  box-shadow: 0 0 4px var(--accent-color);
+  vertical-align: middle;
+}
+
+/* Общий стиль для выделенных заголовков с фоном */
+.title-decor {
+  background-color: var(--accent-color);
+  color: var(--subtitle-color);
+  font-weight: bold;
+}
+
+/* Декоративные уголки */
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--accent-color);
+  border-right: 1px solid var(--accent-color);
+}
+
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 25px;
+  height: 25px;
+  border-bottom: 1px solid var(--accent-color);
+  border-left: 1px solid var(--accent-color);
+}
+
+/* Стили для планшета и выше */
+@media (min-width: 768px) {
+  .decorated-zone::before,
+  .decorated-zone::after,
+  .rec-decor {
+    top: 30px;
+    right: 30px;
+  }
+  
+  .decorated-zone::after {
+    bottom: 30px;
+    left: 30px;
+  }
+  
+  .rec-decor {
+    right: 58px;
+  }
 }
