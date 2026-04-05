@@ -105,7 +105,8 @@
 .advice-subtitle {
   font-size: 18px;
   font-weight: bold;
-  padding: 10px;
+  padding: 0;      /* ← УБРАЛИ padding */
+  margin: 0;       /* ← ДОБАВИЛИ margin 0 */
 }
 
 /* Карточки */
@@ -117,7 +118,7 @@
 
 .card__title {
   font-size: 18px;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 .card__text {
@@ -146,17 +147,17 @@
   gap: 20px;
 }
 
-/* Блок советов - мобильная версия (1 колонка) */
+/* Блок советов - мобильная версия */
 .advice-grid {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  margin-top: 20px;
+  gap: 10px;       /* ← УМЕНЬШИЛИ gap с 20px до 10px */
+  margin-top: 0;   /* ← УБРАЛИ margin-top */
 }
 
 /* ГАЛЕРЕЯ */
 .gallery {
-  margin-top: 20px;
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -165,7 +166,7 @@
 .gallery__title {
   font-size: 18px;
   font-weight: bold;
-  padding: 10px;
+  padding: 0px;
 }
 
 .gallery__grid {
@@ -248,12 +249,14 @@
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     margin: 0;
+    align-self: start;
   }
   
   .section--advice .advice-subtitle {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
     margin-top: 0;
+    align-self: start;
   }
   
   .section--advice .advice-grid {
