@@ -1,4 +1,3 @@
-/* ШАПКА */
 .header {
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
@@ -73,7 +72,6 @@
   padding: 10px;
 }
 
-/* ОСНОВНОЙ КОНТЕНТ */
 .content {
   padding: 40px var(--padding-mobile);
   display: flex;
@@ -108,11 +106,7 @@
 
 .card__title {
   font-size: 18px;
-  font-weight: normal;
-}
-
-.card__title--light {
-  font-weight: normal;
+  font-weight: bold;
 }
 
 .card__text {
@@ -121,24 +115,10 @@
   letter-spacing: 0.02em;
 }
 
-.card__text a {
-  text-decoration: none;
-  text-shadow: 2px 2px 0 var(--accent-color);
-}
-
-.card__text a:hover {
-  border-bottom: 1px solid var(--text-color);
-}
-
-.card__text a:focus-visible {
-  outline: 1px solid var(--text-color);
-}
-
 .section--distractors .section__grid {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  margin-bottom: 0;
 }
 
 .advice-grid {
@@ -148,7 +128,6 @@
   margin-top: 0;
 }
 
-/* ГАЛЕРЕЯ */
 .gallery {
   margin-top: 10px;
   display: flex;
@@ -175,7 +154,6 @@
   object-fit: cover;
 }
 
-/* ФУТЕР */
 .footer {
   min-height: 100vh;
   display: flex;
@@ -194,137 +172,87 @@
   line-height: 0.825;
 }
 
-/* ========== ПЛАНШЕТ (768px и выше) ========== */
 @media (min-width: 768px) {
   .header__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
-  
   .footer__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
-  
   .header__description {
     max-width: 364px;
   }
-  
   .content {
     padding: 60px var(--padding-tablet);
     gap: 80px;
   }
-  
   .section--why {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 20px;
   }
-  
   .section--why .section__content {
     display: flex;
     flex-direction: column;
     gap: 20px;
   }
-  
   .section--distractors .section__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
-  
   .section--advice {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 20px;
   }
-  
   .section--advice .section__title {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
-    margin: 0;
-    align-self: start;
   }
-  
   .section--advice .advice-subtitle {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
-    margin-top: 0;
-    align-self: start;
   }
-  
   .section--advice .advice-grid {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 0;
   }
-  
   .gallery__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, auto);
     gap: 20px;
   }
-  
-  .gallery__image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  
   .gallery__image:nth-child(1) {
-    grid-column: 1 / 3;
-    grid-row: 1 / 2;
+    grid-column: span 2;
   }
-  
   .gallery__image:nth-child(2) {
-    grid-column: 3 / 4;
-    grid-row: 1 / 3;
+    grid-row: span 2;
   }
-  
   .gallery__image:nth-child(3) {
-    grid-column: 1 / 2;
-    grid-row: 2 / 4;
+    grid-row: span 2;
   }
-  
-  .gallery__image:nth-child(4) {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-  }
-  
   .gallery__image:nth-child(5) {
-    grid-column: 2 / 4;
-    grid-row: 3 / 4;
+    grid-column: span 2;
   }
 }
 
-/* ========== ДЕСКТОП (1024px и выше) ========== */
 @media (min-width: 1024px) {
   .header__theme-menu-list {
     flex-direction: row;
     justify-content: center;
   }
-  
   .header__theme-menu {
     justify-self: center;
     margin-top: 0;
   }
-  
   .header__description {
     max-width: 491px;
   }
-  
   .content {
     padding: 60px var(--padding-desktop);
   }
-  
   .gallery__grid {
     gap: 25px;
-  }
-  
-  .section--distractors .section__grid {
-    gap: 20px;
   }
 }
