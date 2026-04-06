@@ -1,4 +1,3 @@
-/* styles/dark.css */
 /* Принудительная тёмная тема через класс */
 :root.theme-dark {
   --bg-color: #000028;
@@ -11,7 +10,6 @@
   --title-shadow: 4px 4px 0 var(--accent-color);
 }
 
-/* В тёмной теме REC должен быть виден */
 :root.theme-dark .rec-decor {
   display: block;
 }

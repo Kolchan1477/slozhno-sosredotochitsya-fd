@@ -1,4 +1,3 @@
-/* styles/light.css */
 /* Принудительная светлая тема через класс */
 :root.theme-light {
   --bg-color: #fff1f7;
@@ -10,11 +9,11 @@
   --subtitle-color: #353430;
   --title-shadow: 4px 4px 0 var(--accent-color);
 }
+
 :root.theme-light .section__title {
   color: #353430;
 }
 
-/* В светлой теме REC должен быть скрыт */
 :root.theme-light .rec-decor {
   display: none;
 }
@@ -31,11 +30,11 @@
     --subtitle-color: #353430;
     --title-shadow: 4px 4px 0 var(--accent-color);
   }
-   .section__title {
+  
+  .section__title {
     color: #353430;
   }
   
-  /* Скрываем REC при автоматической светлой теме */
   .rec-decor {
     display: none;
   }
