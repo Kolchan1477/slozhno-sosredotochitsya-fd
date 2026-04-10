@@ -70,6 +70,7 @@
   font-size: 18px;
   font-weight: bold;
   padding: 10px;
+  line-height: 1.3;
 }
 
 .content {
@@ -94,8 +95,8 @@
 .advice-subtitle {
   font-size: 18px;
   font-weight: bold;
-  padding: 0;
-  margin: 0;
+  padding: 10px;
+  line-height: 1.3;
 }
 
 .card {
@@ -218,6 +219,8 @@
     grid-column: 2 / 3;
     grid-row: 2 / 3;
   }
+
+  /* ГАЛЕРЕЯ: 3 ряда, 3 колонки */
   .gallery__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
