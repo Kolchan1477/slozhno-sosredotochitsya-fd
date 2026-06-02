@@ -56,8 +56,8 @@ a {
 /* Декоративный элемент REC */
 .rec-decor {
   position: absolute;
-  top: 20px;
-  right: 48px;
+  top: var(--padding-mobile);
+  right: calc(var(--padding-mobile) + 28px);
   color: var(--accent-color);
   text-transform: uppercase;
   font-weight: normal;
@@ -83,6 +83,9 @@ a {
   background-color: var(--accent-color);
   color: var(--subtitle-color);
   font-weight: bold;
+  padding: 0 10px;
+  line-height: 1;
+  display: inline-block;
 }
 
 .decorated-zone {
@@ -92,8 +95,8 @@ a {
 .decorated-zone::before {
   content: '';
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: var(--padding-mobile);
+  right: var(--padding-mobile);
   width: 25px;
   height: 25px;
   border-top: 1px solid var(--accent-color);
@@ -103,8 +106,8 @@ a {
 .decorated-zone::after {
   content: '';
   position: absolute;
-  bottom: 20px;
-  left: 20px;
+  bottom: var(--padding-mobile);
+  left: var(--padding-mobile);
   width: 25px;
   height: 25px;
   border-bottom: 1px solid var(--accent-color);
@@ -112,19 +115,35 @@ a {
 }
 
 @media (min-width: 768px) {
-  .decorated-zone::before,
-  .decorated-zone::after,
-  .rec-decor {
-    top: 30px;
-    right: 30px;
+  .decorated-zone::before {
+    top: var(--padding-tablet);
+    right: var(--padding-tablet);
   }
   
   .decorated-zone::after {
-    bottom: 30px;
-    left: 30px;
+    bottom: var(--padding-tablet);
+    left: var(--padding-tablet);
   }
   
   .rec-decor {
-    right: 58px;
+    top: var(--padding-tablet);
+    right: calc(var(--padding-tablet) + 38px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .decorated-zone::before {
+    top: var(--padding-desktop);
+    right: var(--padding-desktop);
+  }
+  
+  .decorated-zone::after {
+    bottom: var(--padding-desktop);
+    left: var(--padding-desktop);
+  }
+  
+  .rec-decor {
+    top: var(--padding-desktop);
+    right: calc(var(--padding-desktop) + 38px);
   }
 }
