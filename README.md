@@ -39,12 +39,9 @@ text
 
 Рекомендуется использовать локальный сервер:
 
-```bash
-npx live-server
-или
-
 bash
-python -m http.server 8000
+git clone https://github.com/Kolchan1477/slozhno-sosredotochitsya-fd
+Открыть index.html в браузере
 Особенности вёрстки
 Mobile first: базовая вёрстка под 375px, затем адаптация под 768px и 1024px
 
