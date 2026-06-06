@@ -3,11 +3,12 @@
   --bg-image: url(../images/cover-image-light.png);
   --text-color: #353430;
   --title-color: #ffc2e6;
-  --accent-color: #ff8dcb;
+  --accent-color: #b3b3b3; /* ← серый для кнопок и уголков */
+  --title-decor-bg: #ff8dcb; /* ← розовый для полосы */
   --section-title-color: #353430;
-  --accent-transparent: rgba(255, 141, 203, 0.4);
+  --accent-transparent: rgba(179, 179, 179, 0.4);
   --subtitle-color: #353430;
-  --title-shadow: 4px 4px 0 var(--accent-color);
+  --title-shadow: 4px 4px 0 #ff8dcb; /* ← розовая тень */
 }
 
 :root.theme-light .rec-decor {
@@ -19,11 +20,13 @@
     --bg-color: #fff1f7;
     --bg-image: url(../images/cover-image-light.png);
     --text-color: #353430;
-
-    --accent-color: #ff8dcb;
-    --accent-transparent: rgba(255, 141, 203, 0.4);
+    --title-color: #ffc2e6;
+    --accent-color: #b3b3b3;
+    --title-decor-bg: #ff8dcb;
+    --section-title-color: #353430;
+    --accent-transparent: rgba(179, 179, 179, 0.4);
     --subtitle-color: #353430;
-    --title-shadow: 4px 4px 0 var(--accent-color);
+    --title-shadow: 4px 4px 0 #ff8dcb;
   }
 
   .rec-decor {
