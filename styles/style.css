@@ -14,7 +14,7 @@
 
 .header__theme-menu {
   justify-self: end;
-  margin-top: 20px;
+  margin-top: -50px;
 }
 
 .header__theme-menu-list {
@@ -60,25 +60,28 @@
   text-shadow: var(--title-shadow);
   line-height: 0.825;
   margin: 10px 0;
-  margin-left: calc(-1 * var(--padding-mobile));
+  margin-top: -50px;
+
+  margin-left: calc(-1 * var(--padding-mobile) + 10px);
 }
 
 .header__description {
   justify-self: end;
   align-self: center;
   max-width: 355px;
+  margin-top: -20px;
   margin-bottom: 20px;
 }
 
 .header__description .title-decor {
   font-size: 18px;
   line-height: 1.3;
-  letter-spacing: -0.4px;
+  letter-spacing: 0;
 }
 
 /* ОСНОВНОЙ КОНТЕНТ */
 .content {
-  padding: 40px var(--padding-mobile);
+  padding: 0 var(--padding-mobile) 40px;
   display: flex;
   flex-direction: column;
   gap: 50px;
@@ -97,11 +100,14 @@
   color: var(--section-title-color);
   max-width: 315px;
   margin-bottom: 20px;
+  margin-top: -36px;
 }
 
 /* Подзаголовок советов */
 .advice-subtitle {
   font-size: 18px;
+  margin-bottom: 40px;
+  margin-top: -15px;
 }
 
 /* Карточки */
@@ -114,6 +120,7 @@
 .card__title {
   font-size: 18px;
   font-weight: bold;
+  margin-top: -20px;
 }
 
 /* Для секции советов — обычное начертание (без жирности) */
@@ -124,7 +131,8 @@
 .card__text {
   font-size: 18px;
   line-height: 1.3;
-  letter-spacing: -0.4px;
+  letter-spacing: -0.3px;
+  margin-bottom: 40px;
 }
 
 /* Ссылки */
@@ -150,6 +158,8 @@
 
 .gallery__title {
   font-size: 18px;
+  margin-top: -45px;
+  margin-bottom: -5px;
 }
 
 .gallery__grid {
@@ -183,6 +193,7 @@
   color: var(--title-color);
   text-shadow: var(--title-shadow);
   line-height: 0.825;
+  margin-top: -70px;
 }
 
 .page {
@@ -203,14 +214,14 @@
 .rec-decor {
   position: absolute;
   top: var(--padding-mobile);
-  right: calc(var(--padding-mobile));
+  right: calc(var(--padding-mobile) - 5px);
   padding-right: 15px;
   color: var(--accent-color);
   text-transform: uppercase;
   font-weight: normal;
   font-size: var(--main-font-size);
   line-height: 1.4;
-  letter-spacing: 0.1em;
+  letter-spacing: -0.4px;
   pointer-events: none;
 }
 
@@ -253,7 +264,7 @@
 .decorated-zone::after {
   content: "";
   position: absolute;
-  bottom: var(--padding-mobile);
+  bottom: calc(var(--padding-mobile) + 70px);
   left: var(--padding-mobile);
   width: 25px;
   height: 25px;
@@ -299,6 +310,12 @@
 @media (min-width: 768px) {
   .header {
     padding: var(--padding-tablet);
+    padding-top: 55px;
+  }
+  .header__title {
+    margin-left: -25px;
+    margin-top: -10px;
+    margin-bottom: 10px; /* ← убрать отступ слева */
   }
 
   .header__title,
@@ -308,7 +325,7 @@
 
   .header__description {
     max-width: 364px;
-    margin-bottom: 0;
+    margin-bottom: -10px;
   }
 
   .content {
@@ -316,13 +333,21 @@
     gap: 80px;
   }
 
-  /* Общие стили для всех секций с гридом */
+  /* Общие стили для секций с гридом (без distractors) */
   .section--why,
-  .section--distractors,
   .section--advice {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 20px;
+  }
+
+  /* Секция distractors — заголовок сверху, карточки снизу */
+  .section--distractors {
+    display: block;
+  }
+  .section--distractors .section__title {
+    max-width: 236px; /* ← подбери нужное значение */
+    margin-bottom: 20px;
   }
 
   /* Стили для контента секций 1 и 2 */
@@ -349,6 +374,34 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+  }
+
+  /* Отмена отрицательных отступов с мобилки */
+  .section__title {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  .advice-subtitle {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .card__title {
+    margin-top: 0;
+  }
+
+  .card__text {
+    margin-bottom: 0;
+  }
+
+  .gallery__title {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .footer__title {
+    margin-top: 0;
   }
 
   /* ГАЛЕРЕЯ: 3 ряда, 3 колонки */
@@ -414,16 +467,35 @@
 
   .header__title {
     font-size: var(--title-font-size-desktop);
+    margin-top: 10px;
   }
-
   .header__description {
     max-width: 491px;
+    width: 491px;
+
     justify-self: end;
+    align-self: center;
+  }
+
+  .header__description .title-decor {
+    width: 491px;
+
+    line-height: 1.3;
+    letter-spacing: -0.3px;
+
     align-self: center;
   }
 
   .content {
     padding: 60px var(--padding-desktop);
+  }
+  .card__text {
+    letter-spacing: -0.4px;
+  }
+
+  .section--distractors .section__title {
+    max-width: 315px; /* ← 2 строки */
+    margin-bottom: 20px;
   }
 
   .section--advice .section__title {
