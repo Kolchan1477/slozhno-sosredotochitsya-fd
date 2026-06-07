@@ -9,6 +9,8 @@
   --section-title-color: var(--accent-color);
   --accent-transparent: rgba(255, 0, 112, 0.4);
   --subtitle-color: #000028;
+  --title-shadow: 4px 4px 0 var(--accent-color);
+  --title-decor-bg: var(--accent-color);
 
   /* Шрифты */
   --font-family: "IBM Plex mono", "Courier New", Courier, monospace;
@@ -22,7 +24,4 @@
   --padding-mobile: 10px;
   --padding-tablet: 20px;
   --padding-desktop: 20px;
-
-  /* Тени */
-  --title-shadow: 4px 4px 0 var(--accent-color);
 }
